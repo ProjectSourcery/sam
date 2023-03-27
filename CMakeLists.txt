@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
+
+set(NAME SamLang)
+
+message(STATUS "using ${CMAKE_GENERATOR}")
+
+project(${NAME} VERSION 0.1)
+
+file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+add_executable(${PROJECT_NAME} ${SOURCES})
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+
+# Debug
+set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/..")
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Making build
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/src)

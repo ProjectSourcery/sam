@@ -1,0 +1,29 @@
+SamLang Grammar:
+
+<identifier>:
+the first character must be a letter, then any further character could be a letter, number or a underscore
+
+<native-type>:
+SamLang native defined keyword types:
+- nil
+- string
+- number
+- boolean
+- undefined
+- object
+
+<number>:
+A number consisting of any character of type: 1234567890
+
+<numberset>:
+A group of characters, which can only contain numbers and underscores after the first number
+ex. 2_025 (2025), 7854_6481_31 (7854648131)
+
+<number-literal>:
+A number-literal consists of {<number>,<numberset> or <numberset>.<numberset>}
+ex. 24_574.87_43 (24574.8743)
+
+<string-literal>:
+A string-literal starts with a double-quote ( " ), a single-quote ( ' ) or a grave ( ` ) and contains every letter until
+the next unescaped quote-like character ( ", ', ` ) or until the end of line.
+A multi-line string-literal is also possible with double square brackets ( [[ ) and ended with ending double square brackets ( ]] ).
